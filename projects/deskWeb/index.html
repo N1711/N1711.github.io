@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <head>
+		<meta charset="utf-8">
+		<title>Bespoke Desk Design</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css\neon.css">
+	</head>
+  <body style="margin: 0;" canvas { width: 100%; height: 100% }>
+  <div class="header-3">
+  </div>
+    <div class="header-2">
+  </div>
+  <div class="header">
+  </div>
+	<script src="js\three.js"></script>
+	<script src="js\three.min.js"></script>
+	<script src="https://cdn.rawgit.com/mrdoob/three.js/r92/examples/js/loaders/GLTFLoader.js"></script>
+	<script src="js\OrbitControls.js"></script>
+	<script src="js\demo.js"></script>
+	<script>
+		const openNav = () => document.getElementById("mySidepanel").style.width = "90px"; 				/* Set the width of the sidebar to 90px (show it) */
+		const closeNav = () => document.getElementById("mySidepanel").style.width = "0";				/* Set the width of the sidebar to 0 (hide it) */
+		const openTemplate = () => document.getElementById("templatepanel").style.width = "90px";
+		const closeTemplate = () => document.getElementById("templatepanel").style.width = "0";
+		const openExtras = () => document.getElementById("extraspanel").style.width = "90px";
+		const closeExtras = () => document.getElementById("extraspanel").style.width = "0";			 	/* Set the width of the sidebar to 0 (hide it) */
+
+		const closeNav1 = () => {
+  			document.getElementById("bottom-panel").style.width = "0";
+  			document.getElementById("bottom-panel").style.height = "0";
+		}
+
+		const openNav1 = () => {
+  			document.getElementById("bottom-panel").style.width = "350px";
+  			document.getElementById("bottom-panel").style.height = "150px";
+		}
+
+		const closeNav2 = () => {
+  			document.getElementById("top-panel").style.width = "0";
+  			document.getElementById("top-panel").style.height = "0";
+		}
+
+		const openNav2 = () => {
+  			document.getElementById("top-panel").style.width = "350px";
+  			document.getElementById("top-panel").style.height = "150px";
+		}
+
+		const closeNav3 = () => {
+  			document.getElementById("right-panel").style.width = "0";
+  			document.getElementById("right-panel").style.height = "0";
+		}
+
+		const openNav3 = () => {
+  			document.getElementById("right-panel").style.width = "350px";
+  			document.getElementById("right-panel").style.height = "150px";
+		}
+
+		const openright = () => document.getElementById("rightpanel").style.width = "300px";
+		const closebom = () => document.getElementById("rightpanel").style.width = "0";
+
+	</script>
+	<ul>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Desk Designer</a></li>
+		<li><a href="#">Download</a></li>
+		<li><a href="#">Our Services</a></li>
+		<li><a href="#">Contact us</a></li>
+	</ul>
+	<!-- Color panel -->
+	<div id="mySidepanel" class="sidepanel">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="#" class="color-001" id="oak"></a>
+		<a href="#" class="color-002" id="ash"></a>
+		<a href="#" class="color-003" id="white"></a>
+		<a href="#" class="color-004" id="wood"></a>
+	</div>
+	<!-- Template Panel -->
+	<div id="templatepanel" class="templatepanel">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeTemplate()">&times;</a>
+		<a href="#" class="template1" id="desk_b">1</a>
+		<a href="#" class="template2" id="desk_c">2</a>
+		<a href="#" id="desk_d"><img src="img/icon/desk-d.png"></img></a>
+		<a href="#">Template 4</a>
+	</div>
+	<!-- Extras Panel -->
+	<div id="extraspanel" class="extraspanel">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeExtras()">&times;</a>
+		<a href="#"><img src="img\icon\_extras1.png">USB HUB</img></a>
+		<a href="#"><img src="img\icon\_extras2.png">Cable grommet</a>
+		<a href="#"><img src="img\icon\_extras3.png">LED strip</a>
+		<a href="#">Sliding Keyboard</a>
+	</div>
+	<!-- buttons on the left side -->
+	<div class="btn-group">
+		<button class="button1" onclick="" id="clearmesh">&#9851; New</button>
+		<button onclick="openTemplate()">&#9776; Template</button>
+		<button onclick="openNav()">&#9776; Color</button>  
+		<button onclick="openExtras()">&#9776; Extras</button> 
+	</div>
+	<!-- BOM Panel -->
+	<div id="rightpanel" class="rightpanel">
+		<a href="javascript:void(0)" class="closebtn2" onclick="closebom()">&times;</a>
+		<a href="#" > Link1 </a>
+	</div>
+	<div class="bom-button">
+		<button onclick="openright()"> &Colon; Show Bill of Materials &#8693;</button>
+	</div>
+	<!-- Left Panel -->
+	<div id="bottom-panel" class="bottom-panel">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
+		<a href="#"><img src="img\icon\element_a.png"></img></a>
+		<a href="#"><img src="img\icon\element_b.png"></img></a>
+		<a href="#"><img src="img\icon\element_c.png"></img></a>
+	</div>
+	<!-- Top Panel -->
+	<div id="top-panel" class="top-panel">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+		<a href="#"><img src="img\icon\element_top.png"></img></a>
+	</div>
+	<!-- Right Panel -->
+	<div id="right-panel" class="right-panel">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+		<a href="#"><img src="img\icon\element_a.png"></img></a>
+		<a href="#"><img src="img\icon\element_b.png"></img></a>
+		<a href="#"><img src="img\icon\element_c.png"></img></a>
+	</div>
+	<!-- Bottom buttons -->
+	<div class="btn-build" id="bottom-div">
+		<button id="Left" onclick="openNav1()">&Colon; Left Panel &#8693;</button>
+		<button id="top" onclick="openNav2()">&Colon; Top Panel   &#8693;</button>
+		<button id="right" onclick="openNav3()">&Colon; Right Panel   &#8693;</button>
+	</div>
+  	<a href="#" class="button_add" id="addroom" />
+  </body>
+  </head>
+</html>

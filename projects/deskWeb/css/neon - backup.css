@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+body
+{
+	margin: 0;
+	padding: 0;
+	font-family: 'Montserrat', sans-serif;
+	background-image: radial-gradient(#fa87ce, #87cefa, #87CEEB);
+}
+ul
+{
+	position: absolute;
+	top: 5%;
+	right: 2%;
+	transform: translate(0, -50%);
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+ul li
+{
+	list-style: none;
+}
+ul li a
+{
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+	text-align: center;
+	font-size: 16px;
+	color: #ffffff;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: .5s;
+}
+
+ul li a:after
+{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 2px;
+	background: #f7b4e7;
+	z-index: -1;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform .5s;
+}
+ul li a:hover:after
+{
+	transform: scaleX(1);
+	transform-origin: right;
+}
+
+.button
+{
+	position: absolute;
+	bottom: 2%;
+	right: 2%;
+	width: 88px;
+	height: 64px;
+	background: url('C:/Users/Dell/Desktop/tmp/desk/desk-web/img/icon/room-icon.png') no-repeat;
+	cursor: pointer;
+    border: none;
+}
+
