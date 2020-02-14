@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Javascript Calculator</title>
+        <link href="frontend.css" rel="stylesheet" type="text/css">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body onLoad = "UpdateDisplay()">
+        <div align="center"><h2><font color="white">My simple calculator</font></h2></div>
+        <div align="center"><h3><font color="white">There are a lot more features that could be added but this calculator is simply a demo with basic logic<br>
+        I've put in. No borrowed source code, just a demonstration of coding style </font></h3></div>
+        <div class="mainWrapper">
+            <div class="hiddenWrapper"><div class="secondaryWrapper" id="display"></div></div>
+            <div class="buttonWrapper">
+                <a href="#" onclick="keyPress('sqr')"><div class="buttonStyle" id="sqr">x<sup>2</sup></div></a>
+                <a href="#" onclick="keyPress('sqrt')"><div class="buttonStyle" id="sqrt">&radic;x</div></a>
+                <a href="#" onclick="keyPress('changeSign')"><div class="buttonStyle" id="changeSign">&#8723</div></a>
+                <a href="#" onclick="keyPress('*')"><div class="specialButtonStyle" id="mult">*</div></a>
+                <a href="#" onclick="keyPress('7')"><div class="buttonStyle" id="seven">7</div></a>
+                <a href="#" onclick="keyPress('8')"><div class="buttonStyle" id="eight">8</div></a>
+                <a href="#" onclick="keyPress('9')"><div class="buttonStyle" id="nine">9</div></a>
+                <a href="#" onclick="keyPress('/')"><div class="specialButtonStyle" id="division">/</div></a>
+                <a href="#" onclick="keyPress('4')"><div class="buttonStyle" id="four">4</div></a>
+                <a href="#" onclick="keyPress('5')"><div class="buttonStyle" id="five">5</div></a>
+                <a href="#" onclick="keyPress('6')"><div class="buttonStyle" id="six">6</div></a>
+                <a href="#" onclick="keyPress('-')"><div class="specialButtonStyle" id="substraction">-</div></a>
+                <a href="#" onclick="keyPress('1')"><div class="buttonStyle" id="one">1</div></a>
+                <a href="#" onclick="keyPress('2')"><div class="buttonStyle" id="two">2</div></a>
+                <a href="#" onclick="keyPress('3')"><div class="buttonStyle"id="three">3</div></a>
+                <a href="#" onclick="keyPress('+')"><div class="specialButtonStyle" id="addition">+</div></a>
+                <a href="#" onclick="keyPress('C')"><div class="buttonStyle" id="clear">C</div></a>
+                <a href="#" onclick="keyPress('0')"><div class="buttonStyle" id="null">0</div></a>
+                <a href="#" onclick="keyPress('.')"><div class="buttonStyle" id="decimal">,</div></a>
+                <a href="#" onclick="keyPress('=')"><div class="specialButtonStyle" style="background-color: orangered; border-bottom-right-radius: 10%;" id="result">=</div></a>
+            </div>
+        </div>
+        <script src="backend.js"></script>
+    </body>
+</html>
