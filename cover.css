@@ -89,3 +89,14 @@ body {
 .mastfoot {
   color: rgba(255, 255, 255, .5);
 }
+
+#logo {
+  overflow: hidden;
+  -webkit-animation:spin 3s linear;
+  -moz-animation:spin 3s linear ;
+  animation:spin 3s linear;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotateY(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotateY(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotateY(360deg); transform:rotateY(360deg); } }
