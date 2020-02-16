@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Simple Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="frontend.css">
+  </head>
+  <body onLoad="loadFirst()">  
+    <ul>
+      <li><a href="#">Index Page</a></li>
+      <li><a href="#">Panels</a></li>
+      <li style="float: right;"><a href="#">HELP</a></li>
+    </ul>
+    
+    <div class="split top-left">
+        <div align="center"><h2>Customer List</h2>
+        <p><input type="text" id="myInput" onkeyup="mySearchFunction()" placeholder="Search here.." title="Search here..."></p>
+      <p>
+        <table id="mainTable">
+          <tr class="header"><th style="width:60%;">Site</th><th style="width:40%;">Agreement</th></tr>
+          <tr><td>Customer1</td><td>Inactive</td></tr>
+          <tr><td>Customer2</td><td>Active</td></tr>
+          <tr><td>Customer3</td><td>Active</td></tr>
+          <tr><td>Customer4</td><td>Inactive</td></tr>
+          <tr><td>Customer5</td><td>Active</td></tr>
+          <tr><td>Customer6</td><td>Active</td></tr>
+          <tr><td>Customer7</td><td>Active</td></tr>
+          <tr><td>Customer8</td><td>Active</td></tr>
+          <tr><td>Customer9</td><td>Active</td></tr>
+          <tr><td>Customer10</td><td>Active</td></tr>
+          <tr><td>Customer11</td><td>Active</td></tr>
+          <tr><td>Customer12</td><td>Active</td></tr>
+          <tr><td>Customer13</td><td>Inactive</td></tr>
+          <tr><td>Customer14</td><td>Active</td></tr>
+          <tr><td>Customer15</td><td>Inactive</td></tr>
+          <tr><td>Customer16</td><td>Active</td></tr>
+          <tr><td>Customer17</td><td>Active</td></tr>
+          <tr><td>Customer18</td><td>Active</td></tr>
+          <tr><td>Customer19</td><td>Active</td></tr>
+          <tr><td>Customer20</td><td>Active</td></tr>
+          <tr><td>Customer21</td><td>Active</td></tr>
+          <tr><td>Customer22</td><td>Inactive</td></tr>
+          <tr><td>Customer23</td><td>Inactive</td></tr>
+          <tr><td>Customer24</td><td>Active</td></tr>
+          <tr><td>Customer25</td><td>Active</td></tr>
+          <tr><td>Customer26</td><td>Inactive</td></tr>
+          <tr><td>Customer27</td><td>Active</td></tr>
+          <tr><td>Customer28</td><td>Active</td></tr>
+          <tr><td>Customer29</td><td>Active</td></tr>
+          <tr><td>Customer30</td><td>Active</td></tr>
+          <tr><td>Customer31</td><td>Active</td></tr>
+          <tr><td>Customer32</td><td>Active</td></tr>
+          <tr><td>Customer33</td><td>Inactive</td></tr>
+          <tr><td>Customer34</td><td>Active</td></tr>
+          <tr><td>Customer35</td><td>Active</td></tr>
+          <tr><td>Customer36</td><td>Inactive</td></tr>
+          <tr><td>Customer37</td><td>Inactive</td></tr>
+          <tr><td>Customer38</td><td>Active</td></tr>
+          <tr><td>Customer39</td><td>Active</td></tr>
+          <tr><td>Customer40</td><td>Active</td></tr>
+        </table>
+     </p>
+    </div>
+  </div>
+    
+  <div class="split2 top-right">
+    <table id="contractTable">
+      <tr><th>Customer Name</th><th>Expiry Date</th></tr>
+      <tr><td>Customer1</td><td>2020/02/29</td></tr>
+      <tr><td>Customer2</td><td>2021/04/22</td></tr>
+      <tr><td>Customer3</td><td>2021/04/30</td></tr>
+      <tr><td>Customer4</td><td>2021/05/31</td></tr>
+      <tr><td>Customer5</td><td>2020/12/31</td></tr>
+      <tr><td>Customer6</td><td>2021/09/30</td></tr>
+      <tr><td>Customer7</td><td>2020/11/30</td></tr>
+      <tr><td>Customer8</td><td>2021/05/31</td></tr>
+      <tr><td>Customer9</td><td>2021/02/29</td></tr>
+      <tr><td>Customer10</td><td>2022/05/31</td></tr>
+      <tr><td>Customer11</td><td>2020/08/31</td></tr>
+      <tr><td>Customer12</td><td>2022/03/31</td></tr>
+      <tr><td>Customer13</td><td>2021/03/31</td></tr>
+      <tr><td>Customer14</td><td>2020/06/30</td></tr>
+      <tr><td>Customer15</td><td>2020/11/30</td></tr>
+      <tr><td>Customer16</td><td>2020/07/31</td></tr>
+      <tr><td>Customer17</td><td>2021/03/31</td></tr>
+      <tr><td>Customer18</td><td>2020/11/30</td></tr>
+      <tr><td>Customer19</td><td>2021/03/31</td></tr>
+      <tr><td>Customer20</td><td>2020/12/31</td></tr>
+      <tr><td>Customer21</td><td>2021/11/30</td></tr>
+      <tr><td>Customer22</td><td>2022/12/01</td></tr>
+      <tr><td>Customer23</td><td>2019/11/30</td></tr>
+      <tr><td>Customer24</td><td>2020/04/30</td></tr>
+      <tr><td>Customer25</td><td>2021/09/01</td></tr>
+      <tr><td>Customer26</td><td>2020/11/30</td></tr>
+      <tr><td>Customer27</td><td>2020/03/31</td></tr>
+      <tr><td>Customer28</td><td>2020/03/31</td></tr>
+      <tr><td>Customer29</td><td>2020/03/31</td></tr>
+      <tr><td>Customer30</td><td>2020/04/14</td></tr>
+      <tr><td>Customer31</td><td>2019/12/31</td></tr>
+      <tr><td>Customer32</td><td>2020/04/30</td></tr>
+      <tr><td>Customer33</td><td>2020/04/17</td></tr>
+      <tr><td>Customer34</td><td>2020/03/31</td></tr>
+      <tr><td>Customer35</td><td>2020/01/01</td></tr>
+      <tr><td>Customer36</td><td>2020/03/31</td></tr>
+      <tr><td>Customer37</td><td>2019/10/01</td></tr>
+    </table>
+    </div>
+    
+    <div class="split3 bottom-right">
+      <div align="center"><h2><u>Dashboard</u></h2></div>
+        <div class="calendar-wrapper">
+          <div id="month"></div>
+          <br><div id="day"></div>
+          <br><div id="weekday">
+        </div>
+      </div>
+      
+      <div class="statistics">
+        <div id="active-style">In Contract</div>
+          <div id="stat"></div>
+      </div>
+      
+      <div class="statistics2">
+        <div id="active-style">Expired</div>
+        <div id="stat2"></div>
+      </div>
+      
+      <div class="statistics3">
+        <div id="active-style">Expiring</div>
+        <div id="stat3"></div>
+      </div>
+    </div>
+    <script src="backend.js" async defer></script>
+  </body>
+</html>

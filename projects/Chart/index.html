@@ -1,0 +1,102 @@
+<title>Flow Chart Generator</title>
+<html>
+<head>
+<script type="text/javascript" src="chart.js"></script>
+<link href="frontend.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--<div class="modalbox">
+<label>Reportable Alarms:</label><br>
+<textarea id="bmodal" name="bmodal" rows="10" cols="35"></textarea>
+</div>
+<div class="info2">
+<label>Site info:</label><br>
+<textarea id="info2" name="info2" rows="10" cols="35"></textarea>
+</div> -->
+<div class="alarmBox">
+<div align="center"><label>Flowchart Name:</label></div><br>
+<textarea id="title1" rows="2" cols="40"></textarea><br></br>
+<div align="center"><label>Additional information:</label></div><br>
+<div id="alarmList" class="alarm2" name="alarmList" contentEditable></input></div>
+<input type="button" class="btn_style" id="bold" value="B" onclick="javascript: document.execCommand('bold');">
+<input type="button" class="btn_style" id="ital" value="I" onclick="javascript: document.execCommand('italic');">
+<input type="button" class="btn_style" id="color_pick" value="R" style="color: #8b0000" onclick="javascript: document.execCommand('forecolor', true, '8b0000');">
+<input type="button" class="btn_style" id="color_pick1" value="G" style="color: #228b22" onclick="javascript: document.execCommand('forecolor', true, '228b22');">
+<input type="button" class="btn_style" id="color_pick3" value="HLT" style="background-color: #ffff00" onclick="javascript: document.execCommand('backColor', true, 'ffff00');">
+<input type="button" class="btn_style" id="color_pick2" value="DFLT" onclick="javascript: document.execCommand('RemoveFormat', false, null);">
+<br></br>
+<div align="center"><label>Info Box 1<label></div>
+<textarea id="infobox1" name="infobox1" rows="10" cols="40"></textarea></br>
+<div align="center"><input type="radio" name="chk1" id="chk0" value="show"><font color="white" />&nbspVisible &nbsp <input type="radio" name="chk1" id="chk1" value="hidden" checked />&nbspHide</font><br></div> 
+</br>
+<div align="center"><label>Site Info</label></div>
+<textarea id="siteinfo" name="siteinfo" rows="10" cols="40"></textarea><br>
+<div align="center"><input type="radio" name="chk2" id="chk2" value="show" /><font color="white">&nbspVisible &nbsp <input type="radio" name="chk2" id="chk3"value="hidden" checked />&nbspHide</font><br></div> </br>
+<div align="center"><input type="button" class="btn22" value="Save" onClick="ListUpdate()"></input></div>
+</div>
+<input type="button" class="btn23" id="button23" value="Build Mode"</input>
+<!--<input type="button" class="btn23" id="button24" value="Text Edit Mode"></input> -->
+<input type="button" class="btn23" id="button25" value="Save Changes"></input>
+<input type="button" class="btn23" id="button27" value="<<"></input>
+<input type="button" class="btn23" id="button26" value=">>"></input>
+<input type="button" class="btn24" id="button28" value="Export"></input>
+<!--<div class="output">
+<div align="center"><label>HTML Output:</label></div><br>
+<textarea id="output" name="output" rows="50" cols="40" disabled></textarea></div> -->
+<div id="code_export">
+<p>&nbsp; </p>
+<p align="center" class="ret" id="title2"><strong>Flow Chart Template</strong></p>
+<div id="container">
+	<div class="dot"></div>
+	<div class="pulse"></div>
+</div> 
+<div id="mainframe" style="position: absolute; left: 40%">
+<nav class="nav">
+	<ul>
+		<li>
+			<a href="#" style="background-color: yellow; color: #000;" id="info">Description<br>(click for additional info)</a>
+			<div id="myModal" class="modal">
+
+					<!-- Modal content -->
+					<div class="modal-content">
+					<div align="right"><span class="close"><font size="6px">&times;</font></span></div>
+					<p id="list1">Additional Info</p>
+					</div>
+			</div>
+			<ul>
+				<li><a href="#" onclick="addSite(this)">Start of the flowchart</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+
+</nav>
+<div class="info_add" id="addinfo" style="color: red"></div>
+<div class="info" id="sitepanel" style="float: right;">Line1: <br>
+		Line2: <br>
+		Line3: <br>
+		Line4: <br>
+		Line5: <br>
+		Line6: <br>
+		Line7: <br>
+		Line8: <br>
+		Comments: 
+		</div>
+		
+<div class="form-popup" id="myForm">
+	<div class="form-container">
+		<p><a href="#" onClick="insSol()">Insert 1 Block</a></p><br>
+		<p><a href="#" onClick="insDec()">Insert 2 Blocks</a></p><br>
+		<p><a href="#" onClick="delBlock()">Delete Block</a></p><br>
+		<p><a href="#" onClick="contentE()">Edit Text</a></p>
+	</div>
+</div>
+</div>
+<a href="#" id="edit" style="position: absolute; right: 10%; display: none;" class="editable">Edit</a>
+</div>
+<div class="signature">Designed and developed by Stoyan "SG" Ganchev | sg@dexinis.com</div>
+
+<script src="backend.js"></script>
+
+</body>
+</html>

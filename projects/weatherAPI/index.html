@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://kit.fontawesome.com/cdc481942a.js"></script>                                                                                   <!--crossorigin="anonymous"-->
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/fontawesome.min.css">
+        <link rel="stylesheet" href="autocomplete.css">
+        <title>Weather Dashboard</title>
+    </head>
+    <body>
+        <div class="title">
+        <h1 class="textH1">Weather Dashboard<i class="fas fa-cloud-sun"></i></h1>
+        <h3 class="textH3">Based on OpenWeather&reg; API and JS ES6</h3>
+    </div>
+        <div class="searchArea" id="searchArea">
+            <input id="searchBar" placeholder="Search for a city"/><button id="searchID" value="Search">Get Weather Data</button>
+            <!-- The Modal -->
+            
+        </div>
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content" id='modal-content'>
+            <!-- <span class="close">&times;</span> -->
+            
+             </div>
+
+     </div>
+        <div id="secondaryInfo">
+            <div id="cityName" class="divFormat"></div>
+            <div id="country"></div>
+            <div id="lat"></div>
+            <div id="lon"></div>
+            <div id="sunrise"></div>
+            <div id="sunset"></div>
+            <div id="dateWrapper"></div>
+        </div>
+        <div id="teritaryInfo" class="teritaryInfo">
+            <div class="containerLeft">
+                <div id="currentTemp"></div>
+                <div id="feelsLike"></div>
+            </div>
+            <div class="containerMiddle">
+                <div id="humidity"></div>
+            </div>
+            <div class="containerRight">
+                <div id="windSpeed"></div>
+            </div>
+            <div class="containerRightR">
+                <div id="pressure"></div>
+            </div>
+            <div class="containerRightT">
+                <div id="sky"></div>
+                <div id="skyDesc"></div>
+            </div>
+            <div class="message">Developed by SG, Dexinis using the openweather.com API.</div>
+        </div>
+        <div class="signature">This Web Page is using a free OpenWeather account, so it is limited to 60 queries per minute. Please do not abuse. Dexinis&reg;2020</div>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <script src="declare.js"></script>
+        <script src="weatherAPI.js"></script>
+    </body>
+</html>

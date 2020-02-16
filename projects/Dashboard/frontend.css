@@ -1,0 +1,237 @@
+body {
+	background-color: rgb(0,0,0);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  box-shadow: 0 0 5px rgb(45, 255, 252);
+  animation: fo 2s alternate infinite;
+}
+
+@keyframes fo {
+ from {box-shadow: 0 0 5px rgb(45, 255, 252);}
+ to {box-shadow: 0 0 20px rgb(45, 255, 252);}
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: rgb(45, 255, 252);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+table {
+  border-spacing: 0;
+  width: 100%;
+  margin-left: 20px;
+  /*border: 1px solid #ddd;*/
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(32,48,63);
+}
+
+/* Split the screen in half */
+.split {
+  height: 85%;
+  width: 49%;
+  position: fixed;
+  z-index: 1;
+  top: 10%;
+  overflow-x: hidden;
+  padding-top: 20px;
+  border: 1px solid #ccc;
+  background-color: rgba(32,48,63,0.5);
+}
+
+/* Split the screen in half */
+.split2 {
+  height: 45%;
+  width: 49%;
+  position: fixed;
+  z-index: 1;
+  top: 10%;
+  overflow-x: hidden;
+  border: 1px solid #ccc;
+  background-color: rgba(32,48,63,0.5);
+}
+
+.split3 {
+  height: 40%;
+  width: 49%;
+  position: fixed;
+  z-index: 1;
+  bottom: 3%;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: rgba(32,48,63,0.5);
+}
+
+/* Control the left side */
+.top-left {
+  left: 0;
+  color: rgb(45, 255, 252);
+}
+
+/* Control the right side */
+.top-right {
+  right: 0;
+  color: rgb(45, 255, 252);
+}
+
+.bottom-left {
+  left: 0;
+  color: rgb(45, 255, 252);
+}
+
+/* Control the right side */
+.bottom-right {
+  right: 0;
+  color: rgb(45, 255, 252);
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+#myInput {
+  background-color: rgba(32,48,63,0.5);
+  width: 80%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+  color: rgb(45, 255, 252);
+}
+
+#eBowTable {
+  border-collapse: collapse;
+  width: 90%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#eBowTable th, #eBowTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#eBowTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#eBowTable tr.header, #eBowTable tr:hover {
+  background-color: #000;
+}
+.calendar-wrapper {
+	width: 180px;
+	height: 180px;
+	float: left;
+	border: 2px solid rgb(45, 255, 252);
+	border-radius: 10%;
+	box-shadow: 2px 2px 2px rgb(45,255, 252);
+	margin-left: 20px;
+	margin-top: 5%;
+}
+
+#month, #weekday {
+	color: white;
+	text-align: center;
+	font-size: 20px;
+
+}
+#day {
+	color: white;
+	text-align: center;
+	font-size: 84px;
+	font-weight: 800;
+}
+#active-style, #non-active-style {
+	color: white;
+	text-align: center;
+	font-size: 18px;
+	margin-top: 7px;
+}
+#stat {
+	color: white;
+	text-align: center;
+	font-size: 84px;
+	font-weight: 800;
+}
+
+#stat2 {
+	color: white;
+	text-align: center;
+	font-size: 84px;
+	font-weight: 800;
+}
+
+#stat3 {
+	color: white;
+	text-align: center;
+	font-size: 84px;
+	font-weight: 800;
+}
+
+
+.statistics {
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	border: 20px solid rgb(45, 255, 252);
+	margin-left: 10px;
+	float: left;
+	margin-top: 5%;
+	margin-left: 5%;
+}
+
+.statistics2 {
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	border: 20px solid rgb(45, 255, 252);
+	margin-left: 10px;
+	float: left;
+	margin-top: 5%;
+	margin-left: 5%;
+}
+
+.statistics3 {
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	border: 20px solid rgb(45, 255, 252);
+	margin-left: 10px;
+	float: left;
+	margin-top: 5%;
+	margin-left: 5%;
+}
