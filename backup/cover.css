@@ -1,16 +1,23 @@
 html, body {
   height: 100%;
+  scrollbar-color: #cc0066 transparent;
+  scrollbar-width: thin;
+  overflow-y: scroll;
 }
+
 
 body {
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
   background-color: #333;
+  position: relative;
+  color: #fff;
 }
 
 .nav {
   margin-top: 10px;
   margin-left: 50px;
+  transition: margin 1s;
 }
 
 a,
@@ -28,10 +35,6 @@ a:hover {
 .btn-lg {
   padding: .75rem 1.25rem;
   font-weight: 700;
-}
-
-body {
-  color: #fff;
 }
 
 .nav-masthead .nav-link {
@@ -75,49 +78,30 @@ body {
 .btn-secondary:hover,
 .btn-secondary:focus {
   color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
+  text-shadow: none; 
   background-color: #fff;
   border: .05rem solid #fff;
 }
 
- .flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 300px;
-  /* border: 1px solid #f1f1f1; */
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
-}
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  color: grey;
+  text-shadow: none;
 }
 
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+.container {
+  padding: 0 16px;
 }
 
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
-.flip-card-front {
-  /* background-color: #7ea5f7; */
-  color: black;
+.title {
+  color: grey;
 }
-
-.flip-card-back {
-  background-color: dodgerblue;
-  color: white;
-  transform: rotateY(180deg);
-} 
 
 .skillContainer {
   width: 200px;
