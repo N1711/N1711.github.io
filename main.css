@@ -1,3 +1,10 @@
+* {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #cc0066 transparent;
+}
+
+
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 body, html {
@@ -33,19 +40,54 @@ body, html {
     border-radius: 6px;
 }
 
-#logo {
+/* div a:hover, 
+header#home:hover ~ div a[href="#home"],
+div#profile:hover ~ div a[href="#profile"],
+div#projects:hover ~ div a[href="#projects"],
+div#contact:hover ~ div a[href="#contact"]
+{
+  background: #666;
+}  */
+
+.initial {
     width: 200px;
     height: 200px;
-    -webkit-animation:spin 1.5s ease-in-out;
+    opacity: 1;
+    -webkit-animation: spin 1.5s ease-in-out;
   -webkit-animation-delay: 1s;
   -webkit-animation-iteration-count: 2;
   -moz-animation: spin 1.5s ease-in-out;
   -moz-animation-delay: 1s;
   -moz-animation-iteration-count: 2;
-  animation:spin 1.5s ease-in-out;
+  animation: spin 1.5s ease-in-out;
   animation-delay: 1s;
   animation-iteration-count: 2;
 }
+
+.scroll {
+  width: 200px;
+  height: 200px;
+  opacity: 0;
+  -webkit-animation: op 1s, ease-in-out;
+  -moz-animation: op 1s, ease-in-out;
+  animation: op 1s, ease-in-out;
+}
+
+.showUp {
+  width: 30px;
+  height: 30px;
+  -webkit-animation: po 1.5s, ease-in;
+  -moz-animation: po 1.5s, ease-in;
+  animation: po 1.5s, ease-in;
+}
+
+@keyframes op {from {opacity: 1} to {opacity: 0}}
+@-moz-keyframes op {from {opacity: 1} to {opacity: 0}}
+@-webkit-keyframes op {from {opacity: 1} to {opacity: 0}}
+
+@keyframes po {from {opacity: 0} to {opacity: 1}}
+@-moz-keyframes op {from {opacity: 0} to {opacity: 1}}
+@-webkit-keyframes op {from {opacity: 0} to {opacity: 1}}
 
 @-moz-keyframes spin { 100% { -moz-transform: rotateY(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotateY(360deg); } }

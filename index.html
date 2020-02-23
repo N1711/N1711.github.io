@@ -8,12 +8,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<body>
+<body onLoad='onLoad()'>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a>
+    <a href="#home" class=" w3-button w3-wide" id="sg">SG</a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
       <a href="#home" class="w3-bar-item w3-button">HOME</a>
@@ -39,11 +39,11 @@
 </nav>
 
 <!-- Header with full-height image -->
-<header class="bgimg-1 w3-display-container w3-grayscale-min w3-center" id="home">
+  <header class="bgimg-1 w3-display-container w3-center" id="home"> <!--w3-grayscale-min -->
   <div class="w3-display-center w3-text-white w3-top3" style="padding:48px;">
-    <span class="w3-jumbo w3-hide-small w3-animate-top">Creativity beyond limits. Ready?</span><br>
-    <p><img src="img/shield.png" id="logo"></img></p><br>
-    <a href="#about" class="w3-button w3-purple w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off w3-animate-bottom">Show me more</a>
+    <span class="w3-jumbo w3-hide-small w3-animate-top">Future is now. Ready?</span><br>
+    <p><img src="img/shield.png" id="logo" class="initial"></img></p><br>
+    <a href="#profile" class="w3-button w3-purple w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off w3-animate-bottom">Show me more</a>
   </div> 
   <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -55,8 +55,8 @@
   </div>
 </header>
 
-<!-- About Section -->
-<div class="w3-container" style="padding:128px 16px" id="profile">
+<!-- Profile Section -->
+<div class="w3-container w3-white" style="padding:128px 16px" id="profile">
   <h3 class="w3-center">PERSONAL PROFILE</h3>
   <p class="w3-center w3-large">Key skills and competencies</p>
   <div class="w3-row-padding w3-center w3-animate-bottom" style="margin-top:64px">
@@ -83,7 +83,7 @@
   </div>
 </div>
 
-<!-- Promo Section - "We know design" -->
+<!-- Personal Philosophy Section -->
 <div class="w3-container w3-light-grey" style="padding:128px 16px">
   <div class="w3-row-padding">
     <div class="w3-col m6">
@@ -99,59 +99,60 @@
   </div>
 </div>
 
-<!-- Team Section -->
-<div class="w3-container" style="padding:128px 16px" id="projects">
+<!-- Project Section -->
+<div class="w3-container w3-white" style="padding:128px 16px" id="projects">
   <h3 class="w3-center">PROJECTS INTRO</h3>
   <p class="w3-center w3-large">Current project list which keeps expanding</p>
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+  <p class="w3-center w3-hover-opacity"><a href="https://github.com/N1711/N1711.github.io">Link to GitHub source code</a></p>
+  <div class="w3-row-padding" style="margin-top:64px">
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="img/weather.png" alt="weather" style="width:100%">
+        <img src="img/weather.png" alt="weather" style="width:100%" class="w3-hover-opacity">
         <div class="w3-container">
           <h3>Weather Dashboard</h3>
           <p class="w3-opacity">JS, weather API, CSS and HTML</p>
           <p>Who hasn't developed a weather app? Developed using Openweather API to practice Promises in JS.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-link"></i> Link</button></p>
+          <p><a href="https://n1711.github.io/projects/weatherAPI/index.html"><button class="w3-button w3-light-grey w3-block"><i class="fa fa-link"></i> Link</button></a></p>
         </div>
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="img/desk.png" alt="desk" style="width:100%">
+        <img src="img/desk.png" alt="desk" style="width:100%" class="w3-hover-opacity">
         <div class="w3-container">
           <h3>3D rendering</h3>
           <p class="w3-opacity">JS, HTML, CSS + Three.js</p>
           <p>Developed using the Three.js library and Blender. Supports dynamic texture rendering.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-link"></i> Link</button></p>
+          <p><a href="https://n1711.github.io/projects/deskWeb/index.html"><button class="w3-button w3-light-grey w3-block"><i class="fa fa-link"></i>Link</button></a></p>
         </div>
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="img/calc.png" alt="calc" style="width:100%">
+        <img src="img/calc.png" alt="calc" style="width:100%" class="w3-hover-opacity">
         <div class="w3-container">
           <h3>JS Calculator</h3>
           <p class="w3-opacity">JS, HTML and CSS</p>
           <p>Developed after a JS course about objects and features very simple css interface. More features to be added.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-link"></i> Link</button></p>
+          <p><a href="https://n1711.github.io/projects/calculator/calculator.html"><button class="w3-button w3-light-grey w3-block"><i class="fa fa-link"></i> Link</button></a></p>
         </div>
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="img/dash.png" alt="Dash" style="width:100%">
+        <img src="img/dash.png" alt="Dash" style="width:100%" class="w3-hover-opacity">
         <div class="w3-container">
           <h3>JS Dashboard</h3>
           <p class="w3-opacity">JS, HTML, CSS</p>
           <p>The interactive dashboard sorts the contracts by expiry date and contains some basic counters.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-link"></i> Link</button></p>
+          <p><a href="https://n1711.github.io/projects/Dashboard/index.html"><button class="w3-button w3-light-grey w3-block"><i class="fa fa-link"></i> Link</button></a></p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Promo Section "Statistics" -->
+<!-- Section "Statistics" -->
 <div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
   <div class="w3-quarter">
     <span class="w3-xxlarge">4</span>
@@ -251,20 +252,23 @@
   </div>
 </div>
 
-<!-- Contact Section -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
+<div class="w3-container w3-white" style="padding: 128px 16px" id="contact">
+  <div class="w3-row-padding">
     <div class="w3-center">
-    <h3 class="w3-center">CONTACT</h3>
-    <p class="w3-center w3-large">How to reach me:</p>
-            <div style="margin-top:48px">
-                <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Horsham, UK</p>
-                <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: Upon Request</p>
-                <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: stoyan.lachezarov.ganchev@gmail.com</p>
-                <br>
-                <img src="img/device.jpg" class="w3-image w3-greyscale w3-round-large" style="width:500px; height: 300px; margin-top:48px">
-            </div>
-        </div>
-    <!-- Image of location/map -->
+      <h3 class="w3-center">CONTACT</h3>
+      <p class="w3-center w3-large">How to reach me:</p>
+    </div>
+  </div>
+  <div class="w3-row-padding">
+    <div class="w3-col m6">
+        <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Horsham, UK</p>
+        <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: Upon Request<br></p>
+        <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: stoyan.lachezarov.ganchev@gmail.com</p>
+    </div>
+    <div class="w3-col m6">
+      <img src="img/device.jpg" class="w3-image w3-greyscale w3-round-large" style="width:500px; height: 300px; margin-top:48px">
+    </div>
+  </div>
 </div>
 
 <!-- Footer -->
@@ -282,30 +286,37 @@
 </footer>
  
 <script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-
-
 // Toggle between showing and hiding the sidebar when clicking the menu icon
-var mySidebar = document.getElementById("mySidebar");
+const mySidebar = document.getElementById("mySidebar");
+let scrolled = false;
 
-function w3_open() {
-  if (mySidebar.style.display === 'block') {
-    mySidebar.style.display = 'none';
-  } else {
-    mySidebar.style.display = 'block';
-  }
+const mainLogo = document.querySelector('#logo');
+
+const w3_open = () => {
+  (mySidebar.style.display === 'block') ? mySidebar.style.display = 'none' : mySidebar.style.display = 'block';
 }
 
 // Close the sidebar with the close button
-function w3_close() {
-    mySidebar.style.display = "none";
+const w3_close = () =>  mySidebar.style.display = "none";
+
+const onLoad = () => {
+  window.addEventListener('scroll', () => {
+    if(!scrolled) {
+      const logo = document.querySelector('#sg');
+      logo.innerHTML = `<img src="img/shield.png" class="showUp"></img>`;
+      scrolled = true;
+    }
+    if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mainLogo.classList.remove('initial');
+      mainLogo.classList.add('scroll');
+    }
+    else {
+      mainLogo.classList.remove('scroll');
+      mainLogo.classList.add('initial');
+    }
+  });
 }
+
 </script>
 
 </body>
