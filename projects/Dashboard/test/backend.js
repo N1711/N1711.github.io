@@ -88,8 +88,8 @@ function mySearchFunction() {
   filter = input.value.toUpperCase();
   table = document.getElementById("mainTable");
   tr = table.querySelectorAll("tr");
-  for(i=0;i<tr.length;i++) {
-    td = tr[i].querySelector("td");
+  for (let trCount of tr.length) {
+    td = trCount.querySelector("td");
     if (td) {
       txtValue = td.textContent || td.innerText;
       (txtValue.toUpperCase().indexOf(filter) > -1) ? tr[i].style.display = "" : tr[i].style.display = "none" //is the search criteria contained in the td text? Here we are using indexOf to check
