@@ -22,7 +22,7 @@ body, html {
 
 .w3-bar .w3-button {
   padding: 16px;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 .w3-top3 {
