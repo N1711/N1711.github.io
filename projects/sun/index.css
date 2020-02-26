@@ -86,7 +86,9 @@ body {
     left: -25%; 
     position: absolute;
     transform: rotate3d(0.8, 0.2, 0, 75deg); 
+    -webkit-transform: rotate3d(0.8, 0.2, 0, 75deg);
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
   }
 
 @keyframes shoot {
@@ -145,4 +147,16 @@ body {
         -moz-transition: all 200ms ease-in-out;
     }
        
+}
+
+@media only screen and (max-width: 600px) {
+    .sun {
+        width: 200px;
+        height: 200px;
+    }
+
+    .planet {
+        width: 30px;
+        height: 30px;
+    }
 }
