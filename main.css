@@ -110,3 +110,10 @@ div#contact:hover ~ div a[href="#contact"]
 @keyframes glow { from { box-shadow: 0 0 40px #d9910b } to { box-shadow: 0 0 120px #0ddbb9 }}
 @-webkit-keyframes glow { from { box-shadow: 0 0 40px #d9910b } to { box-shadow: 0 0 120px #0ddbb9 }}
 @-moz-keyframes glow { from { box-shadow: 0 0 40px #d9910b } to { box-shadow: 0 0 120px #0ddbb9 }}
+
+@media only screen and (max-width: 600px) {
+  .sun {
+    width: 200px;
+    height: 200px;
+  }
+}
