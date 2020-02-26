@@ -102,23 +102,136 @@ body {
         top: 1%; 
         opacity: 0; 
      }
+}
+
+@keyframes shoot2 {
+    0% {
+        opacity: 1;
+        right: 50%;
+        top: 60%;
+    }
+    20%, 100% { 
+        right: 1%; 
+        top: 1%; 
+        opacity: 0; 
+        }
     }
 
-    @keyframes shoot2 {
-        0% {
-            opacity: 1;
-            right: 50%;
-            top: 60%;
+@-moz-keyframes shoot {
+    0% {
+        opacity: 1;
+        left: 50%;
+        top: 60%;
+    }
+    20%, 100% { 
+        left: 1%; 
+        top: 1%; 
+        opacity: 0; 
         }
-        20%, 100% { 
-            right: 1%; 
-            top: 1%; 
-            opacity: 0; 
-         }
+    }
+        
+@-moz-keyframes shoot2 {
+     0% {
+     opacity: 1;
+    right: 50%;
+    top: 60%;
+    }
+    20%, 100% { 
+        right: 1%; 
+        top: 1%; 
+        opacity: 0; 
         }
+    }
     
+ @-webkit-keyframes shoot {
+    0% {
+        opacity: 1;
+        left: 50%;
+        top: 60%;
+    }
+    20%, 100% { 
+        left: 1%; 
+        top: 1%; 
+        opacity: 0; 
+        }
+    }
+                
+@-webkit-keyframes shoot2 {
+    0% {
+        opacity: 1;
+        right: 50%;
+        top: 60%;
+    }
+        20%, 100% { 
+        right: 1%; 
+        top: 1%; 
+        opacity: 0; 
+        }
+    }
 
 @keyframes rotate {
+    0% {
+        top: 37%;
+        left: 25%;
+        z-index: 1;
+        box-shadow: inset 10px 10px 10px rgba(0,0,0,0.7);
+    }
+    20% {
+        top: 52%;
+        left: 38%;
+        background-color: #000;
+    }
+    75% {
+        top: 64%;
+        left: 67%;
+        background-color:#0ddbb9;
+        /* transform: scale(1); */
+    }
+    100% {
+        top: 37%;
+        left: 25%;
+        z-index: -1;
+        transform: scale(0.8);
+        background-color:#0ddbb9;
+        box-shadow: inset -10px 0px 10px rgba(0,0,0,0.7);
+        transition: all 200ms ease-in-out;
+        -moz-transition: all 200ms ease-in-out;
+    }
+       
+}
+
+@-moz-keyframes rotate {
+    0% {
+        top: 37%;
+        left: 25%;
+        z-index: 1;
+        box-shadow: inset 10px 10px 10px rgba(0,0,0,0.7);
+    }
+    20% {
+        top: 52%;
+        left: 38%;
+        background-color: #000;
+    }
+    75% {
+        top: 64%;
+        left: 67%;
+        background-color:#0ddbb9;
+        /* transform: scale(1); */
+    }
+    100% {
+        top: 37%;
+        left: 25%;
+        z-index: -1;
+        transform: scale(0.8);
+        background-color:#0ddbb9;
+        box-shadow: inset -10px 0px 10px rgba(0,0,0,0.7);
+        transition: all 200ms ease-in-out;
+        -moz-transition: all 200ms ease-in-out;
+    }
+       
+}
+
+@-webkit-keyframes rotate {
     0% {
         top: 37%;
         left: 25%;
