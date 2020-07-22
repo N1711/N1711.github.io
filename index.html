@@ -389,8 +389,6 @@
 const mySidebar = document.getElementById("mySidebar");
 let scrolled = false;
 
-const mainLogo = document.querySelector('#logo');
-
 const w3_open = () => {
   (mySidebar.style.display === 'block') ? mySidebar.style.display = 'none' : mySidebar.style.display = 'block';
 }
@@ -404,18 +402,6 @@ const onLoad = () => {
       const logo = document.querySelector('#sg');
       logo.innerHTML = `<img src="img/shield.png" class="showUp"></img>`;
       scrolled = true;
-    }
-    if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      if(mainLogo.classList.contains('initial')) {
-        mainLogo.classList.remove('initial');
-        mainLogo.classList.add('scroll');
-      }
-    }
-    else {
-      if(mainLogo.classList.contains('scroll')) {
-        mainLogo.classList.remove('scroll');
-        mainLogo.classList.add('initial');
-      }
     }
   });
 }
