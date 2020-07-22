@@ -3,7 +3,7 @@ Platform I created in NodeJS, runnning a webserver on port 3000.
 1. Home
 This section allows the user to fill a form and then inserts the data in the msAccess database.
 
-![node1](https://github.com/N1711/N1711.github.io/tree/master/img/node1.JPG)
+![node1](https://github.com/N1711/N1711.github.io/tree/master/img/node1.JPG?raw=true)
 
 2. Dashboard
 
