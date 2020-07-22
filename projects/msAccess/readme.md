@@ -1,6 +1,7 @@
 Platform I created in NodeJS, runnning a webserver on port 3000.
 
 1. Home
+
 This section allows the user to fill a form and then inserts the data in the msAccess database.
 
 <img src="../../img/node1.JPG">
