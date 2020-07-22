@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Page 404</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/navs.css">
+    </head>
+    <body>
+        <ul>
+            <% if (userLevel == 1) { %>
+            <li><a href="/adm/userMgm"><i class="fa fa-users" aria-hidden="true"></i>User Management</a></li>
+            <% } %>
+            <li><a href="/"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Call Log Form</a></li>
+            <li><a href="/dash"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a></li>
+            <li><a href="/profile">My Profile</a></li>
+            <li><a href="/signOut">Sign Out</a></li>
+            <li style="float:right"><a href="/profile"><i class="fa fa-user-circle" aria-hidden="true"></i> </a><li>
+        </ul>
+        <div class="class404">
+            <div class="title">404 error - Page not found<br>
+                <div style="color: black; font-size: 12px;">The page you are looking for cannot be found. Please ensure you are using the navigation links</div> 
+            </div>   
+        </div>
+    </body>
+</html>

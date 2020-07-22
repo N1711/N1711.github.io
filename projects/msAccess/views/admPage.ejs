@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+            <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title>Admin Panel</title>
+                <meta name="description" content="">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                <link rel="stylesheet" href="/navs.css">
+            </head>
+            <body>
+                <ul>
+                    <% if (userLevel == 1) { %>
+                    <li><a href="/adm/userMgm"><i class="fa fa-users" aria-hidden="true"></i>User Management</a></li>
+                    <% } %>
+                    <li><a href="/"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Call Log Form</a></li>
+                    <li><a href="/dash"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a></li>
+                    <li><a href="/profile">My Profile</a></li>
+                    <li><a href="/signOut">Sign Out</a></li>
+                    <li style="float:right"><a href="/profile"><i class="fa fa-user-circle" aria-hidden="true"></i> <%= name %></a><li>
+                </ul>
+                <div class="class405">
+                    <div class="headerH">User Management</div>
+                    <div class="headerH" style="font-size: 24px">List of Users</div><br><br>
+                    <button class="w3-add" id="addNewU">Add New User</button>
+                    <table width="100%" class="tableclass">
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Account Type</th>
+                        <th>Actions</th>
+                        <hr>
+                        <% userList.forEach((dat) => { %>
+                            <tr>
+                                <td><%= dat.UserName %></td>
+                                <td><%= dat.UserLogin %></td>
+                                <td><%= dat.UserSecurity == 1 ? 'Admin' : 'User' %> </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button onclick="showBtn(this)" class="w3-actions">Actions</button>
+                                        <div id="myDropdown" class="dropdown-content">
+                                            <a href="#" id="<%= dat.UserLogin %>" onclick="showModal(this)">Reset Password</a>
+                                            <a href="#" data-id="<%= dat.UserSecurity %>" data-user-name="<%= dat.UserLogin %>" onclick="showLevelModal(this)">Change User Level</a>
+                                            <a href="#" data-del="<%= dat.UserLogin %>" onclick="showDeleteModal(this)">Delete User</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </table>
+                </div>
+
+                <div class="modal" id="modal">
+                    <button class="exit" id="close">X</button>
+                    <h3 id="pReset"></h3>
+                    <form action="/adm/userMgm/passRes" method="POST" name="AdminReset" id="resForm">
+                        <input type="hidden" id="activeUser" name="activeUser">
+                        <input type="password" id="nPassword" name="nPassword" placeholder="Enter New Password" required>
+                        <input type="password" id="cPassword" name="cPassword" placeholder="Confirm New Passowrd" required>
+                        <button type="submit" id="postBtn">Reset Password</button>
+                </form>
+                </div>
+
+                <div class="modal" id="newUser">
+                    <button class="exit" id="modClose">X</button>
+                    <h3>Add New User</h3>
+                    <form action="/adm/userMgm/addUser" method="POST" name="addUser" id="addForm">
+                        <input type="text" name="userID" id="userID" placeholder="Enter Username" required>
+                        <select name="userLvl" id="userLvl" required>
+                            <option value="1">Admin</option>
+                            <option value="2">User</option>
+                        </select>
+                        <input type="password" name="fPassword" id="fPassword" placeholder="Enter Secure Password (more than 6 characters)" required>
+                        <input type="password" name="cfPassword" id="cfPassword" placeholder="Confirm Password" required>
+                        <button type="submit" id="formBtn">Add User</button>
+                    </form>
+                </div>
+
+                <div class="modal" id="changeLevel">
+                    <button class="exit" id="modClose1">X</button>
+                    <h3 id="pTag"></h3>
+                    <form action="/adm/userMgm/changeLvl" method="POST" name="addUser" id="chLvl">
+                        <input type="hidden" id="qUser" name="qUser">
+                        <label>Current Access Level</label>
+                        <input type="Text" name="currLvl" id="currLvl" disabled>
+                        <label>New Access Level</label>
+                        <select name="newLvl" id="newLvl" required>
+                            <option value="1">Admin</option>
+                            <option value="2">User</option>
+                        </select>
+                        <button type="submit" id="form3Btn">Apply</button>
+                    </form>
+                </div>
+
+                <div class="modal" id="deleteUser">
+                    <button class="exit" id="modClose2">X</button>
+                    <h3 id="hTag"></h3>
+                    <form action="/adm/userMgm/deleteUser" method="POST" name="deleteUser" id="deleteUser">
+                        <input type="hidden" id="delUserId" name="delUserId">
+                        <button type="submit" id="deleteBtn">Yes</button>
+                    </form>
+                    <button id="cancelBtn">No</button>
+                </div>
+                <script>
+                    //Reset Password Form
+                    const submitBtn = document.querySelector('#postBtn');
+                    const form = document.querySelector('#resForm');
+                    const modal = document.querySelector('#modal');
+                    const closeBtn = document.querySelector('#close');
+                    const pReset = document.querySelector('#pReset'),
+                    activeUser = document.querySelector('#activeUser');
+
+                    //new User Form
+                    const addNewU = document.querySelector('#addNewU');
+                    const divUser = document.querySelector('#newUser');
+                    const modClose = document.querySelector('#modClose');
+
+                    //Change User Level Form
+                    const changeLevel = document.querySelector('#changeLevel');
+                    const modClose1 = document.querySelector('#modClose1');
+                    const qUser = document.querySelector('#qUser');
+                    const currLvl = document.querySelector('#currLvl');
+                    const pTag = document.querySelector('#pTag');
+
+                    //Delete User Form
+                    const divDelete = document.querySelector('#deleteUser');
+                    const deleteBtn = document.querySelector('#deleteBtn');
+                    const cancelBtn = document.querySelector('#cancelBtn');
+                    const hTag = document.querySelector('#hTag');
+                    const modClose2 = document.querySelector('#modClose2');
+                    const delUserId = document.querySelector('#delUserId');
+
+                    function showModal(e) {
+                        if(!modal.classList.contains('active')) {
+                            modal.classList.add('active');
+                        }
+                        pReset.innerText = `Password reset for ${e.id}`;
+                        activeUser.value= e.id ;
+                    }
+
+                    function showLevelModal(e) {
+                        if(!changeLevel.classList.contains('active')) {
+                            changeLevel.classList.add('active');
+                        }
+                        pTag.innerText = `Change ${e.getAttribute("data-user-name")}'s Access level`;
+                        qUser.value = e.getAttribute("data-user-name");
+                        currLvl.value = (e.getAttribute("data-id")) == 1 ? 'Admin' : 'User';
+                    }
+
+                    function showDeleteModal(e) {
+                        if(!divDelete.classList.contains('#active')) {
+                            divDelete.classList.add('active');
+                        }
+                        hTag.innerText = `Are you sure you would like to delete ${e.getAttribute("data-del")}?`;
+                        delUserId.value=e.getAttribute("data-del");
+
+                    }
+
+
+                    function showBtn(a) {
+                        a.parentNode.getElementsByClassName("dropdown-content")[0].classList.toggle("show");
+                      }
+                      
+                      // Close the dropdown menu if the user clicks outside of it
+                      window.onclick = function(event) {
+                        if (!event.target.matches('.w3-actions')) {
+                          var dropdowns = document.getElementsByClassName("dropdown-content");
+                          var i;
+                          for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) {
+                              openDropdown.classList.remove('show');
+                            }
+                          }
+                        }
+                      }
+
+                      //event listener
+                      closeBtn.addEventListener('click', () => {
+                        if(modal.classList.contains('active')) {
+                            modal.classList.remove('active');
+                        }
+                      })
+
+                      addNewU.addEventListener('click', () => {
+                          if(!divUser.classList.contains('active')) {
+                              divUser.classList.add('active');
+                          }
+                      })
+
+                      modClose.addEventListener('click', () => {
+                        if(divUser.classList.contains('active')) {
+                            divUser.classList.remove('active');
+                        }
+                      })
+
+                      modClose1.addEventListener('click', () => {
+                        if(changeLevel.classList.contains('active')) {
+                            changeLevel.classList.remove('active');
+                        }
+                      })
+
+                      modClose2.addEventListener('click', () => {
+                        if(divDelete.classList.contains('active')) {
+                            divDelete.classList.remove('active');
+                        }
+                      })
+
+                      cancelBtn.addEventListener('click', () => {
+                        if(divDelete.classList.contains('active')) {
+                            divDelete.classList.remove('active');
+                        }
+                      })
+
+                    </script>
+            </body>
+</html> 

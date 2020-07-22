@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <title>NOC Dashboard</title>
+            <meta name="description" content="">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="/navs.css">
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        </head>
+        <body>
+            <ul>
+                <% if (userLevel == 1) { %>
+                <li><a href="/adm/userMgm"><i class="fa fa-users" aria-hidden="true"></i>User Management</a></li>
+                <% } %>
+                <li><a href="/"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Call Log Form</a></li>
+                <li><a class="active" href="/dash"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a></li>
+                <li><a href="/profile">My Profile</a></li>
+                <li><a href="/signOut">Sign Out</a></li>
+                <li style="float:right"><a href="/profile"><i class="fa fa-user-circle" aria-hidden="true"></i> <%= name %></a><li>
+            </ul>
+            <div class="dashboard">
+                <div style="margin:auto;"><h1>NOC Stats Dashboard <%= monthn %></h1></div>
+                <div class="inner-left">
+                    <u>Year</u><br>2020<br><br>
+                    <u>Month</u><br><br>
+                    <a href="?month=1" class="w4-button">January</a>
+                    <a href="?month=2" class="w4-button">February</a>
+                    <a href="?month=3" class="w4-button">March</a>
+                    <a href="?month=4" class="w4-button">April</a>
+                    <a href="?month=5" class="w4-button">May</a>
+                    <a href="?month=6" class="w4-button">June</a>
+                    <a href="?month=7" class="w4-button">July</a>
+                    <a href="?month=8" class="w4-button">August</a>
+                    <a href="?month=9" class="w4-button">September</a>
+                    <a href="?month=10" class="w4-button">October</a>
+                    <a href="?month=11" class="w4-button">November</a>
+                    <a href="?month=12" class="w4-button">December</a>
+                    <a href="?month=13" class="w4-button">Year-To-Date</a>
+                </div>
+                <div class="inner-right">
+                        <div class="row">
+                            <div class="inner-inner">
+                                <table style="width: 100%">
+                                    <tr>
+                                        <th colspan="3">South East</th>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: green;"></i><font size="2px">Resolved</font><br><%= southeast.remoteResolved %><br><font size="2px">Callout</font><br><%= southeast.remoteCallout %></div></td>
+                                        <td><div class="icon-holder"><div class="holo-se"><p style="line-height: 2px; font-size: 32px;"><%= southeast.total %></p></div></div></td>
+                                        <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: red;"></i><font size="2px">Resolved</font><br><%= southeast.noremoteResolved %><br><font size="2px">Callout</font><br><%= southeast.noremoteCallout %></div><td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="icon-holder"><i class="fa fa-envelope-o" aria-hidden="true"></i><br><%= southeast.emailP %></div></td>
+                                        <td><div class="icon-holder"><i class="fa fa-phone" aria-hidden="true"></i><br><%= southeast.phoneP %></div></td>
+                                        <td><div class="icon-holder"><i class="fa fa-user-o" aria-hidden="true"></i><br><%= southeast.selfP %></div></td>
+                                    </tr>
+                                    
+                                </table>
+                            </div>
+                        <div class="inner-inner">
+                                <table style="width: 100%">
+                                    <tr>
+                                        <th colspan="3">South West</th>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: green;"></i><font size="2px">Resolved</font><br><%= southwest.remoteResolved %><br><font size="2px">Callout</font><br><%= southwest.remoteCallout %></div></td>
+                                        <td rowspan="2"><div class="icon-holder"><div class="holo-sw"><p style="line-height: 5px; font-size: 32px;"><%= southwest.total %></p></div></div></td>
+                                        <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: red;"></i><font size="2px">Resolved</font><br><%= southwest.noremoteResolved %><br><font size="2px">Callout</font><br><%= southwest.noremoteCallout %></div><td>
+                                    </tr>
+                                    <tr>
+                                    
+                                    </tr>
+                                    <tr>
+                                        <td><div class="icon-holder"><i class="fa fa-envelope-o" aria-hidden="true"></i><br><%= southwest.emailP %></div></td>
+                                        <td><div class="icon-holder"><i class="fa fa-phone" aria-hidden="true"></i><br><%= southwest.phoneP %></div></td>
+                                        <td><div class="icon-holder"><i class="fa fa-user-o" aria-hidden="true"></i><br><%= southwest.selfP %></div></td>
+                                    </tr>
+                                </table>
+                        </div>
+                        <div class="inner-inner">
+                            <table style="width: 100%">
+                                <tr>
+                                    <th colspan="3">London</th>
+                                </tr>
+                                <tr>
+                                    <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: green;"></i><font size="2px">Resolved</font><br><%= london.remoteResolved %><br><font size="2px">Callout</font><br><%= london.remoteCallout %></div></td>
+                                    <td rowspan="2"><div class="icon-holder"><div class="holo-lon"><p style="line-height: 5px; font-size: 32px;"><%= london.total %></p></div></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: red;"></i><font size="2px">Resolved</font><br><%= london.noremoteResolved %><br><font size="2px">Callout</font><br><%= london.noremoteCallout %></div><td>
+                                </tr>
+                                <tr>
+                                
+                                </tr>
+                                <tr>
+                                    <td><div class="icon-holder"><i class="fa fa-envelope-o" aria-hidden="true"></i><br><%= london.emailP %></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-phone" aria-hidden="true"></i><br><%= london.phoneP %></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-user-o" aria-hidden="true"></i><br><%= london.selfP %></div></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="inner-inner">
+                            <table style="width: 100%">
+                                <tr>
+                                    <th colspan="3">West Mids</th>
+                                </tr>
+                                <tr>
+                                    <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: green;"></i><font size="2px">Resolved</font><br><%= westmids.remoteResolved %><br><font size="2px">Callout</font><br><%= westmids.remoteCallout %></div></td>
+                                    <td rowspan="2"><div class="icon-holder"><div class="holo-wm"><p style="line-height: 5px; font-size: 32px;"><%= westmids.total %></p></div></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: red;"></i><font size="2px">Resolved</font><br><%= westmids.noremoteResolved %><br><font size="2px">Callout</font><br><%= westmids.noremoteCallout %></div><td>
+                                </tr>
+                                <tr>
+                                
+                                </tr>
+                                <tr>
+                                    <td><div class="icon-holder"><i class="fa fa-envelope-o" aria-hidden="true"></i><br><%= westmids.emailP %></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-phone" aria-hidden="true"></i><br><%= westmids.phoneP %></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-user-o" aria-hidden="true"></i><br><%= westmids.selfP %></div></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="inner-inner">
+                        <table style="width: 100%">
+                            <tr>
+                                <th colspan="3">Monthly Total</th>
+                            </tr>
+                            <tr>
+                                <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: green;"></i><font size="2px">Resolved</font><br><%= totalmonth.remoteResolved %><br><font size="2px">Callout</font><br><%= totalmonth.remoteCallout %></div></td>
+                                <td rowspan="2"><div class="icon-holder"><div class="holo-total"><p style="line-height: 5px; font-size: 32px;"><%= data.length-1 %></p></div></div></td>
+                                <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: red;"></i><font size="2px">Resolved</font><br><%= totalmonth.noremoteResolved %><br><font size="2px">Callout</font><br><%= totalmonth.noremoteCallout %></div><td>
+                            </tr>
+                            <tr>
+                               
+                             </tr>
+                            <tr>
+                                <td><div class="icon-holder"><i class="fa fa-envelope-o" aria-hidden="true"></i><br><%= totalmonth.emailP %></div></td>
+                                <td><div class="icon-holder"><i class="fa fa-phone" aria-hidden="true"></i><br><%= totalmonth.phoneP %></div></td>
+                                <td><div class="icon-holder"><i class="fa fa-user-o" aria-hidden="true"></i><br><%= totalmonth.selfP %></div></td>
+                            </tr>
+                        </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="inner-chart">
+                            <canvas id="chart1"></canvas>
+                        </div>
+                        <div class="inner-chart"><canvas id="chart2"></canvas></div>
+                        <div class="inner-chart"><canvas id="chart3"></canvas></div>
+                    </div>
+                    <div class="row">
+                        <div class="inner-inner">
+                            <table style="width: 100%">
+                                <tr>
+                                    <th colspan="3">East Mids</th>
+                                </tr>
+                                <tr>
+                                    <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: green;"></i><font size="2px">Resolved</font><br><%= eastmids.remoteResolved %><br><font size="2px">Callout</font><br><%= eastmids.remoteCallout %></div></td>
+                                    <td rowspan="2"><div class="icon-holder"><div class="holo-em"><p style="line-height: 5px; font-size: 32px;"><%= eastmids.total %></p></div></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: red;"></i><font size="2px">Resolved</font><br><%= eastmids.noremoteResolved %><br><font size="2px">Callout</font><br><%= eastmids.noremoteCallout %></div><td>
+                                </tr>
+                                <tr>
+                                
+                                </tr>
+                                <tr>
+                                    <td><div class="icon-holder"><i class="fa fa-envelope-o" aria-hidden="true"></i><br><%= eastmids.emailP %></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-phone" aria-hidden="true"></i><br><%= eastmids.phoneP %></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-user-o" aria-hidden="true"></i><br><%= eastmids.selfP %></div></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="inner-inner">
+                            <table style="width: 100%">
+                                <tr>
+                                    <th colspan="3">North East</th>
+                                </tr>
+                                <tr>
+                                    <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: green;"></i><font size="2px">Resolved</font><br><%= northeast.remoteResolved %><br><font size="2px">Callout</font><br><%= northeast.remoteCallout %></div></td>
+                                    <td rowspan="2"><div class="icon-holder"><div class="holo-ne"><p style="line-height: 5px; font-size: 32px;"><%= northeast.total %></p></div></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: red;"></i><font size="2px">Resolved</font><br><%= northeast.noremoteResolved %><br><font size="2px">Callout</font><br><%= northeast.noremoteCallout %></div><td>
+                                </tr>
+                                <tr>
+                                
+                                </tr>
+                                <tr>
+                                    <td><div class="icon-holder"><i class="fa fa-envelope-o" aria-hidden="true"></i><br><%= northeast.emailP %></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-phone" aria-hidden="true"></i><br><%= northeast.phoneP %></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-user-o" aria-hidden="true"></i><br><%= northeast.selfP %></div></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="inner-inner">
+                            <table style="width: 100%">
+                                <tr>
+                                    <th colspan="3">North West</th>
+                                </tr>
+                                <tr>
+                                    <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: green;"></i><font size="2px">Resolved</font><br><%= northwest.remoteResolved %><br><font size="2px">Callout</font><br><%= northwest.remoteCallout %></div></td>
+                                    <td rowspan="2"><div class="icon-holder"><div class="holo-nw"><p style="line-height: 5px; font-size: 32px;"><%= northwest.total %></p></div></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: red;"></i><font size="2px">Resolved</font><br><%= northwest.noremoteResolved %><br><font size="2px">Callout</font><br><%= northwest.noremoteCallout %></div><td>
+                                </tr>
+                                <tr>
+                                
+                                </tr>
+                                <tr>
+                                    <td><div class="icon-holder"><i class="fa fa-envelope-o" aria-hidden="true"></i><br><%= northwest.emailP %></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-phone" aria-hidden="true"></i><br><%= northwest.phoneP %></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-user-o" aria-hidden="true"></i><br><%= northwest.selfP %></div></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="inner-inner">
+                            <table style="width: 100%">
+                                <tr>
+                                    <th colspan="3">Scotland</th>
+                                </tr>
+                                <tr>
+                                    <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: green;"></i><font size="2px">Resolved</font><br><%= scotland.remoteResolved %><br><font size="2px">Callout</font><br><%= scotland.remoteCallout %></div></td>
+                                    <td rowspan="2"><div class="icon-holder"><div class="holo-sc"><p style="line-height: 5px; font-size: 32px;"><%= scotland.total %></p></div></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: red;"></i><font size="2px">Resolved</font><br><%= scotland.noremoteResolved %><br><font size="2px">Callout</font><br><%= scotland.noremoteCallout %></div><td>
+                                </tr>
+                                <tr>
+                                
+                                </tr>
+                                <tr>
+                                    <td><div class="icon-holder"><i class="fa fa-envelope-o" aria-hidden="true"></i><br><%= scotland.emailP %></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-phone" aria-hidden="true"></i><br><%= scotland.phoneP %></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-user-o" aria-hidden="true"></i><br><%= scotland.selfP %></div></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="inner-inner">
+                            <table style="width: 100%">
+                                <tr>
+                                    <th colspan="3">Year-To-Date</th>
+                                </tr>
+                                <tr>
+                                    <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: green;"></i><font size="2px">Resolved</font><br><%= ytdremoteResolved %><br><font size="2px">Callout</font><br><%= ytdremoteCallout %></div></td>
+                                    <td rowspan="2"><div class="icon-holder"><div class="holo-ytd"><p style="line-height: 5px; font-size: 32px;"><%= ytd %></p></div></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-signal" aria-hidden="true" style="color: red;"></i><font size="2px">Resolved</font><br><%= ytdnoremoteResolved %><br><font size="2px">Callout</font><br><%= ytdnoremoteCallout %></div><td>
+                                </tr>
+                                <tr>
+                                
+                                </tr>
+                                <tr>
+                                    <td><div class="icon-holder"><i class="fa fa-envelope-o" aria-hidden="true"></i><br><%= ytdmails %></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-phone" aria-hidden="true"></i><br><%= ytdcalls %></div></td>
+                                    <td><div class="icon-holder"><i class="fa fa-user-o" aria-hidden="true"></i><br><%= ytdself %></div></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+            var ctx = document.getElementById('chart1').getContext('2d');
+                var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'line',
+
+                // The data for our dataset
+                data: {
+                    labels: ['South East', 'South West', 'London', 'West Mids', 'East Mids', 'North West', 'North East', 'Scotland'],
+                    datasets: [{
+                        label: 'Per region',
+                        backgroundColor: 'rgb(255, 99, 132)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: [<%= southeast.total %>, <%= southwest.total %>, <%= london.total %>, <%= westmids.total %>, <%= eastmids.total %>, <%= northwest.total %>, <%= northeast.total %>, <%= scotland.total %>]
+                    }]
+                },
+
+                // Configuration options go here
+                options: {
+                    legend: {
+                        labels: {
+                            fontColor: 'rgb(255,99,132)'
+                        }
+                    },
+                    scales: {
+                        yAxes: [{
+                                ticks: {
+                                  beginAtZero: true,
+                                  fontColor: 'rgb(255,99,132)'
+                                }
+                        }],
+                        xAxes: [{
+                            ticks: {
+                              fontColor: 'rgb(255,99,132)'
+                            }
+                        }]
+                    }
+                }
+            });
+            var ctx_es = document.getElementById('chart2').getContext('2d');
+                var chart = new Chart(ctx_es, {
+                // The type of chart we want to create
+                type: 'bar',
+
+                // The data for our dataset
+                data: {
+                    labels: ['Remote', 'No Remote'],
+                    datasets: [{
+                        label: 'Total Calls',
+                        backgroundColor: ['rgb(15,216,247)', 'rgb(15,216,247)'],
+                        data: [<%= totalmonth.remoteResolved + totalmonth.remoteCallout %>, <%= totalmonth.noremoteResolved + totalmonth.noremoteCallout %>]
+                    }]
+                },
+                options: {
+                    legend: {
+                        labels: {
+                            fontColor: 'rgb(15,216,247)'
+                        }
+                    },
+                    scales: {
+                        yAxes: [{
+                                ticks: {
+                                  beginAtZero: true,
+                                  fontColor: 'rgb(15,216,247)'
+                                }
+                        }],
+                        xAxes: [{
+                            ticks: {
+                              fontColor: 'rgb(15,216,247)'
+                            }
+                        }]
+                    }
+                }
+            });
+            var ctx_ew = document.getElementById('chart3').getContext('2d');
+                var chart = new Chart(ctx_ew, {
+                // The type of chart we want to create
+                type: 'bar',
+
+                // The data for our dataset
+                data: {
+                    labels: ['Remote', 'No Remote'],
+                    datasets: [{
+                        label: 'Total YTD',
+                        backgroundColor: ['#ffb380', '#ffb380'],
+                        data: [<%= ytdremoteCallout + ytdremoteResolved %>, <%= ytdnoremoteResolved + ytdnoremoteCallout %>]
+                    }]
+                },
+                options: {
+                    legend: {
+                        labels: {
+                            fontColor: '#ffb380'
+                        }
+                    },
+                    scales: {
+                        yAxes: [{
+                                ticks: {
+                                  beginAtZero: true,
+                                  fontColor: '#ffb380'
+                                }
+                        }],
+                        xAxes: [{
+                            ticks: {
+                              fontColor: '#ffb380'
+                            }
+                    }]
+                    }
+                }
+            });
+            </script>
+            </body>
+            </html>

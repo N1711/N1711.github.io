@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Horsham Concert Booking</title>
+</head>
+<body>
+    <div class="header">Book your tickets for our concert in Horsham now!</div>
+    <ul class="seat-container">
+        <li><div class="seat"></div><small>Available</small></li>
+        <li><div class="seat selected"></div><small>Selected</small></li>
+        <li><div class="seat occupied"></div><small>Occupied</small></li>
+    </ul>
+    <div class="stage" id="stage">Stage</div>
+    <div class="row">
+        <div class="rowSeat">1</div>
+        <div class="rowSeat">2</div>
+        <div class="rowSeat">3</div>
+        <div class="rowSeat">4</div>
+        <div class="rowSeat">5</div>
+        <div class="rowSeat">6</div>
+        <div class="rowSeat">7</div>
+        <div class="rowSeat">8</div>
+        <div class="rowSeat">9</div>
+        <div class="rowSeat">10</div>
+    </div>
+    <div id="rowContainer">
+    <div class="row" id="row">
+        <div class="rowName">A</div>
+        <div class="seat" id="seat">$25</div>
+        <div class="seat" id="seat">$25</div>
+        <div class="seat" id="seat">$25</div>
+        <div class="seat" id="seat">$25</div>
+        <div class="seat" id="seat">$25</div>
+        <div class="seat" id="seat">$25</div>
+        <div class="seat" id="seat">$25</div>
+        <div class="seat" id="seat">$25</div>
+        <div class="seat" id="seat">$25</div>
+        <div class="seat occupied" id="seat"></div>
+    </div>
+    <div class="row" id="row">
+        <div class="rowName">B</div>
+        <div class="seat" id="seat">$25</div>
+        <div class="seat" id="seat">$25</div>
+        <div class="seat" id="seat">$25</div>
+        <div class="seat" id="seat">$25</div>
+        <div class="seat" id="seat">$25</div>
+        <div class="seat" id="seat">$25</div>
+        <div class="seat" id="seat">$25</div>
+        <div class="seat" id="seat">$25</div>
+        <div class="seat" id="seat">$25</div>
+        <div class="seat occupied" id="seat"></div>
+    </div>
+    <div class="row" id="row">
+        <div class="rowName">C</div>
+        <div class="seat" id="seat">$18</div>
+        <div class="seat" id="seat">$18</div>
+        <div class="seat" id="seat">$18</div>
+        <div class="seat" id="seat">$18</div>
+        <div class="seat" id="seat">$18</div>
+        <div class="seat" id="seat">$18</div>
+        <div class="seat occupied" id="seat"></div>
+        <div class="seat" id="seat">$18</div>
+        <div class="seat" id="seat">$18</div>
+        <div class="seat" id="seat">$18</div>
+    </div>
+    <div class="row" id="row">
+        <div class="rowName">D</div>
+        <div class="seat" id="seat">$18</div>
+        <div class="seat" id="seat">$18</div>
+        <div class="seat" id="seat">$18</div>
+        <div class="seat occupied" id="seat"></div>
+        <div class="seat" id="seat">$18</div>
+        <div class="seat" id="seat">$18</div>
+        <div class="seat" id="seat">$18</div>
+        <div class="seat" id="seat">$18</div>
+        <div class="seat" id="seat">$18</div>
+        <div class="seat" id="seat">$18</div>
+    </div>
+    <div class="row" id="row">
+        <div class="rowName">E</div>
+        <div class="seat" id="seat">$10</div>
+        <div class="seat occupied" id="seat"></div>
+        <div class="seat occupied" id="seat"></div>
+        <div class="seat occupied" id="seat"></div>
+        <div class="seat" id="seat">$10</div>
+        <div class="seat" id="seat">$10</div>
+        <div class="seat" id="seat">$10</div>
+        <div class="seat" id="seat">$10</div>
+        <div class="seat" id="seat">$10</div>
+        <div class="seat" id="seat">$10</div>
+    </div>
+    <div class="row" id="row">
+        <div class="rowName">F</div>
+        <div class="seat" id="seat">$10</div>
+        <div class="seat" id="seat">$10</div>
+        <div class="seat" id="seat">$10</div>
+        <div class="seat" id="seat">$10</div>
+        <div class="seat" id="seat">$10</div>
+        <div class="seat" id="seat">$10</div>
+        <div class="seat" id="seat">$10</div>
+        <div class="seat occupied" id="seat"></div>
+        <div class="seat occupied" id="seat"></div>
+        <div class="seat" id="seat">$10</div>
+    </div>
+    </div>
+    <p class="total">You have selected 0 tickets for the price of $0</p>
+    <button type="submit" class="book" id="book" onClick="window.location.reload();">Book now!</button>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Profile</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/navs.css">
+    </head>
+    <body>
+        <ul>
+            <% if (userLevel == 1) { %>
+            <li><a href="/adm/userMgm"><i class="fa fa-users" aria-hidden="true"></i>User Management</a></li>
+            <% } %>
+            <li><a href="/"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> Call Log Form</a></li>
+            <li><a href="/dash"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a></li>
+            <li><a class="active" href="/profile">My Profile</a></li>
+            <li><a href="/signOut">Sign Out</a></li>
+            <li style="float:right"><a href="/profile"><i class="fa fa-user-circle" aria-hidden="true"></i> <%= name %></a><li>
+        </ul>
+    <div align="center" class="profile">
+        <img src="./avatar.png" width="200px" height="200px"></img>
+        <p style="font-size: 28px;"><%= user %> <br> <font size="2em">Full Name</font></p>
+        <p style="font-size: 28px;"><%= name %> <br> <font size="2em">User Name</font></p>
+        <a href="/profile/<%= name %>/passwordReset" class="reset">Reset Password</a>
+    </div>
+    </body>
+</html>
