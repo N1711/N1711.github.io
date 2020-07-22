@@ -14,9 +14,11 @@ The html uses Chart.js to build the charts in the Dashboard section.
 <img src="../../img/node.JPG">
 
 3. Profile
+
 Allows a simple profile management like Password Reset and account type info.
 
 4. Admin Panel
+
 A hidden menu only for Users with Admin Access. Allows basic account management like reset user password, change access level and user addition/deletion.
 
 <img src="../../img/node2.JPG">
