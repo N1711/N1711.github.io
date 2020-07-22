@@ -3,6 +3,8 @@ Platform I created in NodeJS, runnning a webserver on port 3000.
 1. Home
 This section allows the user to fill a form and then inserts the data in the msAccess database.
 
+![node1](../../img.png)
+
 2. Dashboard
 
 It reads data off a msAccess database file and pulls out statistics which are passed to an EJS generated html page. 
