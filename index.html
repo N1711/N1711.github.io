@@ -239,7 +239,7 @@
     </div>
     <div class="w3-col l4 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="img/node_cover.JPG" alt="Dashboard Platform" style="width:100%" class="w3-hover-opacity">
+        <img src="img/node.JPG" alt="Dashboard Platform" style="width:100%" class="w3-hover-opacity">
         <div class="w3-container">
           <h3>User management and statistics Platform in Node.js</h3>
           <p class="w3-opacity">VanillaJS, HTML, CSS, Chart.js, Node.js, Express, ADODBO, msAccess, EJS, bcrypt</p>
@@ -406,12 +406,16 @@ const onLoad = () => {
       scrolled = true;
     }
     if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      mainLogo.classList.remove('initial');
-      mainLogo.classList.add('scroll');
+      If(mainLogo.classList.contains('initial')) {
+        mainLogo.classList.remove('initial');
+        mainLogo.classList.add('scroll');
+      }
     }
     else {
-      mainLogo.classList.remove('scroll');
-      mainLogo.classList.add('initial');
+      if(mainLogo.classList.contains('scroll')) {
+        mainLogo.classList.remove('scroll');
+        mainLogo.classList.add('initial');
+      }
     }
   });
 }
