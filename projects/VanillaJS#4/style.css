@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+    --main-color: rgba(39, 37, 43, 0.9);
+    --nav-color: rgb(15, 15, 15);
+    --text-color: rgb(49, 99, 236);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    /* padding: 10px 20px; */
+    position: relative;
+    margin: 0;
+    font-family: Lato, sans-serif;
+    transition: transform 0.3s ease;
+}
+
+body.show-nav {
+    transform: translateX(200px);
+}
+
+header {
+    background-color: var(--main-color);
+    color: #fff;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    padding: 5px 0px;
+}
+
+header a {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    text-decoration: none;
+    color: #fff;
+}
+
+header .submit {
+    padding: 5px 15px;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(245, 140, 189);
+    color: #fff;
+    cursor: pointer;
+}
+
+header .submit:hover {
+    background-color: blueviolet;
+}
+
+.even {
+    margin: 5px 5px;
+}
+
+.sign-form {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 37, 43, 0.7);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+.sign-form.show-modal {
+    display: block;
+}
+
+.sign-form .container{
+    background-color: #fff;
+    width: 30%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    align-items: center;
+    justify-content: center;;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 100%;
+    animation-name: mode;
+    animation-duration: 1s;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    margin: 10px 10px;
+    color: rgb(6, 22, 77);
+}
+
+.sign-form .container input[type="text"], input[type="password"] {
+    width: 80%;
+    padding: 5px 7px;
+    border: 1px solid #333;
+    background-color: rgba(39, 37, 43, 0.1);
+    border-radius: 2px;
+}
+
+.sign-form .container h2{
+    color: var(--text-color);
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    text-decoration: none;
+}
+
+.sign-me {
+    width: 150px;
+    padding: 5px 10px;
+    margin: 20px;
+    background-color: var(--text-color);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.sign-me:hover {
+    background-color: rgb(6, 22, 77);
+}
+
+small {
+    margin: 10px;
+    border-bottom: 1px solid rgba(87, 53, 155, 0.2);
+}
+
+.sign-form .container .terms {
+    margin: 20px;
+}
+
+.sidebar {
+    /* display: none; */
+}
+
+nav {
+    background-color: var(--nav-color);
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 2px solid rgba(200, 200, 200, 0.1);
+    color: #fff;
+    transform: translateX(-100%);
+}
+
+nav .navigation {
+    text-align: center;
+}
+
+nav .pic {
+    padding: 30px 0;
+    text-align: center;
+}
+
+nav .pic img {
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+nav ul li{
+    margin: 25px 0;
+    text-transform: uppercase;
+    border-bottom: 1px solid #333;
+    padding: 20px;
+}
+
+nav ul li:first-child{
+    border-top: 1px solid #333;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+#sidebar-close {
+    text-decoration: none;
+    color: #fff;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 2px;
+    padding: 10px;
+}
+
+@keyframes mode {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+

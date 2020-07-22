@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Custom Music Player</title>
+</head>
+<body>
+    <h2>SG Custom Music Player</h2>
+    <div class="music-container" id="music-container">
+        <div class="music-info">
+            <marquee><h4 id="title">Ocean</h4></marquee>
+            <div class="progress-container" id="progress-container">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+        <audio id="audioPlayer" src="music/ocean.mp3"></audio>
+        <div class="img-container">
+            <img src="img/ocean.jpg" id="cover">
+        </div>
+        <div class="control-container" id="control-container">
+            <button class="controlBtn" id="prev"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+            <button class="controlBtn btnBig" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+            <button class="controlBtn" id="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

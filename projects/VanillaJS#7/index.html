@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <title>Infinite Scroll Demo Site</title>
+</head>
+<body>
+    <h1>Live Coverage Posts</h1>
+    <div class="nav">
+        <h3>My Profile</h3>
+        <div class="profile"></div>
+        <img src="https://randomuser.me/api/portraits/women/78.jpg" alt="My Profile">
+        <ul>
+            <li><a href="#">My Profile</a></li>
+            <li><a href="#">Messages</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Log Out</a></li>
+        </ul>
+    </div>
+    <div class="modal" id="modal">
+        <div class="modal-container">
+            <h3>I have not implemented this yet</h3>
+            <p>Click anywhere outside this box to close me</p>
+        </div>
+    </div>
+    <div class="addPost" id="addPost">
+        <input type="text" id="newPostTitle" placeholder="Add a Title">
+        <textarea name="newPost" id="newPost" placeholder="Tell us what you think" required></textarea>
+        <button class="postBtn" id="postBtn">Post</button>
+    </div>
+    <div class="posts-container" id="posts-container">
+        
+    </div>
+    <div class="loader" id="loader"><i class="fa fa-spinner fa-pulse"></i></div>
+    <script src="script.js"></script>
+</body>
+</html>
