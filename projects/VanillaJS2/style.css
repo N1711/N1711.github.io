@@ -94,6 +94,7 @@ body {
 
 .seat.occupied {
     background-color: #cecaca;
+    color: #cecaca;
 }
 
 .seat.selected {
