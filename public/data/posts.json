@@ -45,13 +45,13 @@
         "liked": true,
         "chart": {
             "type": "bar",
-            "labels": ["C#", "Java", "Javascript"],
-            "data": {"items": [3,5,6] ,"label": "Projects by programming language"}
+            "labels": ["C#", "Java", "Javascript", "SQL/MongoDB", "VBA"],
+            "data": {"items": [3,5,6,6,2] ,"label": "Projects by programming language"}
         }
     },
     {
         "_id": 4,
-        "text": "All time revenue",
+        "text": "In the past year I've worked on so many interesting projects - below is a detailed breakdown of the type of software solutions I was part of.",
         "postedBy": {
             "name": "Stoyan G", 
             "_id": 1,
@@ -65,8 +65,8 @@
         "liked": false,
         "chart": {
             "type": "doughnut",
-            "labels": ["C#", "Java", "Javascript"],
-            "data": {"items": [4000,5000,6000] ,"label": "Revenue"}
+            "labels": ["Enhancements", "New Software", "Code Migration"],
+            "data": {"items": [4,4,2] ,"label": "Project type"}
         }
     }
 ]
