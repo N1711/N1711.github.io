@@ -100,7 +100,7 @@ function repost(id) {
     postDiv.style = "background-color: #111;padding: 8px 16px 8px 16px;align-items: start;border-radius: 5px;margin-bottom: 10px;margin-top: 8px";
     const sharedPost = document.createElement('div');
     sharedPost.style="display: flex;flexDirection: column;margin-top: 10px;border: 1px solid;border-color: #777;border-radius: 10px;padding: 16px;margin-bottom: 10px";
-    sharedPost.innerHTML = `<div style="display: flex;flex-direction: column;">${item.text} ${item.hyperlink.length > 0 && `<div><a href=${item.hyperlink} style="color: 2089FE">${item.hyperlink}</a></div>`}</div>`;
+    sharedPost.innerHTML = `<div style="display: flex;flex-direction: column;">${item.text} ${item.hyperlink.length > 0 ? `<div><a href=${item.hyperlink} style="color: 2089FE">${item.hyperlink}</a></div>` : ''}</div>`;
     const likeElement = document.createElement('div');
     const rePostElement = document.createElement('div');
     const commentElement = document.createElement('div');
