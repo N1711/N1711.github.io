@@ -84,7 +84,7 @@
     post.appendChild(postPostedByContainer);
     post.appendChild(postBodyContainer);
     post.appendChild(actionBar);
-    order === 'reverse' ? feed.insertBefore(post, document.getElementById(postLastPostId > 2 ? postLastPostId : 1)) : feed.appendChild(post);
+    order === 'reverse' ? feed.insertBefore(post, document.getElementById(postLastPostId > 4 ? postLastPostId : 1)) : feed.appendChild(post);
 }
 
 function repost(id) {
@@ -117,6 +117,6 @@ function repost(id) {
     postDiv.appendChild(postPostedByContainer);
     postDiv.appendChild(sharedPost);
     postDiv.appendChild(actionBar);
-    feed.insertBefore(postDiv, document.getElementById(postLastPostId > 2 ? postLastPostId : 1));
+    feed.insertBefore(postDiv, document.getElementById(postLastPostId > 4 ? postLastPostId : 1));
     postLastPostId++;
 }
