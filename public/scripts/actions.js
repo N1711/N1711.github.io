@@ -36,7 +36,7 @@ function like (_id) {
     likedPost.likes = like ? likedPost.likes-1 : likedPost.likes+1;
     const textElement = document.getElementById(`text_like_postId_${_id}`);
     textElement.innerText = formatLikes(likedPost.likes);
-    buttonElement.innerHTML = `<ion-icon name=${like ? "heart-outline" : "heart"} color="danger"></ion-icon>;`
+    buttonElement.innerHTML = `<ion-icon name=${like ? "heart-outline" : "heart"} color="danger"></ion-icon>`
 }
 
 function postSomething() {
