@@ -4,9 +4,6 @@ const closeButton = document.querySelector("#close-btn");
 openButton.addEventListener("click", () => {
     dialog.showModal();
 });
-closeButton.addEventListener("click", () => {
-    dialog.close();
-});
 
 closeButton.addEventListener("click", () => {
     document.getElementById("text-area-post").value = '';
